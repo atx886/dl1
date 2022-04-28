@@ -24,6 +24,8 @@ d = webdriver.Chrome(chrome_options=chrome_options, executable_path=chromedriver
 # d = webdriver.Firefox()
 
 d.implicitly_wait(5)
+
+
 def rw():
     time.sleep(1)
 
@@ -183,16 +185,23 @@ def zz():
         '/html/body/uni-app/uni-page/uni-page-wrapper/uni-page-body/uni-view/uni-view[2]/uni-view[2]/uni-view/uni-view/uni-view[5]/uni-view[2]').click()
 
 
+global sys1
+sys1 = 0
+
+
 def auto():
+    global sys1
     p = writeexcle()
     while p is None:
         return 0
     dl(p)
     # dj()
     x = outid()
+    sys1 += 1
     a = sm(x[0], x[1])
     while a == 0:
         x = outid()
+        sys1 += 1
         a = sm(x[0], x[1])
     zy()
     zz()
