@@ -210,8 +210,12 @@ def auto():
 
 
 i = 0
-while auto() == 1:
-    i += 1
-    print(i)
-    d = webdriver.Chrome(chrome_options=chrome_options, executable_path=chromedriver)
-    d.implicitly_wait(5)
+try:
+    while auto() == 1:
+        i += 1
+        print(i)
+        d = webdriver.Chrome(chrome_options=chrome_options, executable_path=chromedriver)
+        d.implicitly_wait(5)
+    print("使用", sys1)
+except Exception:
+    print("使用", sys1)
